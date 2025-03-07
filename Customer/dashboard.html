@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decora - Customer Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: rgba(222, 197, 132, 0.5);
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(222, 197, 132, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: color 0.3s ease;
+        }
+        .navbar:hover {
+            color: white;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 50px;
+            color: rgb(123, 81, 20);
+            transition: color 0.3s ease;
+        }
+        .navbar:hover h1 {
+            color: white;
+        }
+        .navbar .buttons {
+            display: flex;
+            gap: 10px;
+            padding-right: 40px;
+        }
+        .navbar button {
+            background: transparent;
+            border: 2px solid #56330a;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            height: 50px;
+            width: 80px;
+            font-size: 15px;
+            font-weight: 800;
+            color: #56330a;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .navbar:hover button {
+            color: white;
+            border-color: white;
+        }
+        .navbar button:hover {
+            background: #56330a;
+            color: white;
+        }
+        .container {
+            margin-top: 80px;
+            padding-top: 30px;
+            padding-left: 150px;
+            padding-right: 150px;
+            text-align: left;
+        }
+        .scroll-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px;
+            margin: auto;
+        }
+        .scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .scroll-container::-webkit-scrollbar-track {
+            background: #f3f3f3;
+            border-radius: 10px;
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #8b6f3f;
+            border-radius: 10px;
+        }
+        .grid {
+            display: flex;
+            gap: 30px;
+            width: max-content;
+        }
+        .card {
+            padding: 20px;
+            background: #ebe6e1;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            text-align: center;
+            min-width: 400px;
+            font-size: x-large;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .card:hover {
+            background: #8b6f3f;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Decora</h1>
+        <div class="buttons">
+            <button>Review</button>
+            <button>Logout</button>
+        </div>
+    </div>
+    
+    <div id="container">
+        <!-- Home -->
+        <div class="container">
+            <h1>Home</h1>
+            <div class="scroll-container">
+                <div class="grid">
+                    <div class="card">ROOM</div>
+                    <div class="card">Kitchen</div>
+                    <div class="card">Hall</div>
+                    <div class="card">1BHK</div>
+                    <div class="card">2BHK</div>
+                    <div class="card">3BHK</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Office -->
+        <div class="container">
+            <h1>Office</h1>
+            <div class="scroll-container">
+                <div class="grid">
+                    <div class="card">ROOM</div>
+                    <div class="card">Kitchen</div>
+                    <div class="card">Hall</div>
+                    <div class="card">Outdoor</div>
+                    <div class="card">1BHK</div>
+                    <div class="card">2BHK</div>
+                    <div class="card">3BHK</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Outdoor -->
+        <div class="container">
+            <h1>Outdoor</h1>
+            <div class="scroll-container">
+                <div class="grid">
+                    <div class="card">Garden</div>
+                    <div class="card">Balcony</div>
+                    <div class="card">Pool Area</div>
+                    <div class="card">Terrace</div>
+                    <div class="card">Open Lounge</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
