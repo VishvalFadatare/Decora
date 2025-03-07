@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decora - Customer Dashboard</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
@@ -25,16 +27,19 @@
             transition: background 0.3s ease, color 0.3s ease;
         }
         .navbar:hover {
-            background: white;
+            background: rgb(123, 81, 20);;
         }
         .navbar h1 {
-            margin: 0;
-            font-size: 50px;
-            color: rgb(123, 81, 20);
-            transition: color 0.3s ease;
-        }
+    margin: 0;
+    font-size: 50px;
+    color: rgb(123, 81, 20);
+    font-family: "Brush Script MT", cursive; /* Makes it cursive */
+    transition: color 0.3s ease;
+}
+
         .navbar:hover h1 {
-            color: rgb(123, 81, 20);
+            color : white;
+            
         }
         .navbar .buttons {
             display: flex;
@@ -106,6 +111,14 @@
             background: #8b6f3f;
             color: white;
         }
+
+        #card_img {
+    width: 100%;
+    height: 400px; /* Adjust as needed */
+    object-fit: cover; /* Ensures the image maintains aspect ratio while filling the area */
+    border-radius: 10px;
+}
+
     </style>
 </head>
 <body>
@@ -123,12 +136,12 @@
             <h1>Home</h1>
             <div class="scroll-container">
                 <div class="grid">
-                    <div class="card">ROOM</div>
-                    <div class="card">Kitchen</div>
-                    <div class="card">Hall</div>
-                    <div class="card">1BHK</div>
-                    <div class="card">2BHK</div>
-                    <div class="card">3BHK</div>
+                    <div class="card"><img src="assets/images/room.jpg" alt="" id="card_img"><br><label for="" id="card_text">ROOM</label></div>
+                    <div class="card"><img src="assets/images/kitchen.jpg" alt="" id="card_img"><br><label for="" id="card_text">KITCHEN</label></div>
+                    <div class="card"><img src="assets/images/hall.jpg" alt="" id="card_img"><br><label for="" id="card_text">HALL</label></div>
+                    <div class="card"><img src="assets/images/1bhk.jpg" alt="" id="card_img"><br><label for="" id="card_text">1BHK</label></div>
+                    <div class="card"><img src="assets/images/2bhk.jpg" alt="" id="card_img"><br><label for="" id="card_text">2BHK</label></div>
+                    <div class="card"><img src="assets/images/3bhk.jpg" alt="" id="card_img"><br><label for="" id="card_text">3BHK</label></div>
                 </div>
             </div>
         </div>
