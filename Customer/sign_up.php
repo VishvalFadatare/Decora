@@ -1,3 +1,11 @@
+<?php 
+   require_once('../config.php');
+   include_once('customer_class.php');
+
+   if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['page_action'] == 'sign_up') {
+    registration(); }
+ ?>  
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +22,7 @@
 
         <h2>Create an Account</h2>
 
-        <form>
+        <form method="post">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" required>
 
@@ -28,6 +36,7 @@
             <input type="password" id="confirm-password" name="confirm-password" required>
 
             <button type="submit" class="continue-btn">SIGN UP</button>
+            <input type="hidden" name="page_action" value="sign_up">
         </form>
 
         <div class="links">

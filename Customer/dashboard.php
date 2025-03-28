@@ -125,7 +125,7 @@
     <div class="navbar">
         <h1>Decora</h1>
         <div class="buttons">
-            <a href="Feedback.html">
+            <a href="Feedback.php">
                 <button>Review</button>
             </a>
             <button>Logout</button>

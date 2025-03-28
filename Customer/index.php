@@ -6,6 +6,8 @@
 	<title>Decora - Elegant & Mordern</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 </head>
 <body>
 
@@ -31,6 +33,8 @@
       <div class="carousel-caption d-none d-md-block">
         <h3>Elegant Interiors</h3>
         <p>Transform your space with modern and sophisticated designs.</p>
+        <p>For More Details</p> 
+        <a href="login.php"><button class="login_btn">Login</button></a>
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="2000">
@@ -38,6 +42,8 @@
       <div class="carousel-caption d-none d-md-block">
         <h3>Luxury Living</h3>
         <p>Experience the finest home decor with Decora.</p>
+        <p>For More Details</p> 
+        <a href="login.php"><button class="login_btn">Login</button></a>
       </div>
     </div>
     <div class="carousel-item">
@@ -45,6 +51,8 @@
       <div class="carousel-caption d-none d-md-block">
         <h3>Modern Aesthetics</h3>
         <p>Designs that blend elegance with functionality.</p>
+        <p>For More Details</p> 
+        <a href="login.php"><button class="login_btn">Login</button></a>
       </div>
     </div>
   </div>
@@ -92,6 +100,7 @@
       <div class="designer-info">
         <h4>Jane Smith</h4>
         <p>Modern design expert specializing in luxury interiors</p>
+        
       </div>
     </div>
 
@@ -122,7 +131,48 @@
 </div>
 
 
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+      <div class="row">
+          <!-- About Section -->
+          <div class="col-md-4 footer-section">
+              <h4>About Decora</h4>
+              <p>Decora brings elegance and modernity to interior design. We create spaces that reflect beauty, functionality, and luxury.</p>
+             
+          </div>
 
+          <!-- Quick Links Section -->
+          <div class="col-md-4 footer-section">
+              <h4>Quick Links</h4>
+              <ul class="footer-links">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Gallery</a></li>
+                  <li><a href="#">Designers</a></li>
+                  <li><a href="#">Contact</a></li>
+              </ul>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="col-md-4 footer-section">
+              <h4>Contact Us</h4>
+              <p>Email: <a href="mailto:info@decora.com">info@decora.com</a></p>
+              <p>Phone: +1 234 567 890</p>
+              <div class="social-icons">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; 2025 Decora. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- Footer -->
 
 
 	<!-- bootstrap -->

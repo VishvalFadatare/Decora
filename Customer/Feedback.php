@@ -1,3 +1,11 @@
+<?php
+    require_once('../config.php');
+    include_once('customer_class.php');
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['page_action'] == 'feedback') {
+        cust_feed(); 
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +17,7 @@
 <body>
     <div class="container">
         <h1>Customer Feedback Form</h1>
-        <form action="/submit-feedback" method="post">
+        <form method="post">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -43,8 +51,8 @@
             </div>
 
             <div class="form-group">
-                <label for="overallRating">Overall Rating:</label>
-                <select id="overallRating" name="overallRating" required>
+                <label for="overallRrating">Overall Rating:</label>
+                <select id="overallRating" name="overall_rating" required>
                     <option value="">Select Rating</option>
                     <option value="5">🌟🌟🌟🌟🌟 Excellent</option>
                     <option value="4">🌟🌟🌟🌟 Good</option>
@@ -54,7 +62,9 @@
                 </select>
             </div>
 
+            
             <button type="submit">Submit Feedback</button>
+            <input type="hidden" name="page_action" value="feedback">
         </form>
     </div>
 </body>

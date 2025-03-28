@@ -1,3 +1,11 @@
+<?php 
+   require_once('../config.php');
+   include_once('customer_class.php');
+
+   if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['page_action'] == 'sign_up') {
+    cust_login(); }
+ ?>  
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +22,7 @@
         <h2>Welcome Back!</h2>
 
        
-        <form>
+        <form method="post" action="dashboard.php">
             <label for="email">E-mail</label>
             <input type="email" id="email" name="email" required>
 
@@ -27,11 +35,13 @@
                 <input type="checkbox" id="remember">
                 <label for="remember">Remember me next time</label>
             </div>
+
+            <input type="hidden" name="page_action" value="login">
         </form>
 
         <div class="links">
-            <a href="reset.html">Forgot your password? <span>Click here to reset</span></a>
-            <a href="sign_up.html">Don't have an account? <span>Sign Up Here</span></a>
+            <a href="reset.php">Forgot your password? <span>Click here to reset</span></a>
+            <a href="sign_up.php">Don't have an account? <span>Sign Up Here</span></a>
         </div>
     </div>
 </body>
