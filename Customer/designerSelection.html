@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Designer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init("your_emailjs_userID"); // Replace with your EmailJS user ID
+
+        function sendMail(designerEmail, designerName) {
+            // Retrieve stored selections
+            let selectedSpace = localStorage.getItem("selectedSpace") || "Not Specified";
+            let selectedRoom = localStorage.getItem("selectedRoom") || "Not Specified";
+            let selectedCategory = localStorage.getItem("selectedCategory") || "Not Specified";
+            let selectedVariant = localStorage.getItem("selectedVariant") || "Not Specified";
+
+            let userEmail = "user@example.com"; // Replace with the actual user email (if available)
+
+            let emailParams = {
+                to_email: designerEmail,
+                to_name: designerName,
+                from_email: userEmail,
+                subject: "Interior Design Project Request",
+                message: `
+                    Hello ${designerName},
+
+                    A client is interested in hiring you for an interior design project.
+
+                    Project Details:
+                    - Space: ${selectedSpace}
+                    - Room Type: ${selectedRoom}
+                    - Theme Category: ${selectedCategory}
+                    - Selected Variant: ${selectedVariant}
+
+                    If you are interested, please get in touch with the client.
+
+                    Best regards,
+                    Decora Team
+                `
+            };
+
+            emailjs.send("your_serviceID", "your_templateID", emailParams)
+                .then(response => {
+                    alert("Email sent successfully to " + designerName);
+                })
+                .catch(error => {
+                    alert("Failed to send email. Please try again.");
+                    console.log("Email Error: ", error);
+                });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Select a Designer</h1>
+        <div class="designers">
+            <div class="card">
+                <img src="assets/designers/designer1.jpg" alt="Designer 1">
+                <h3>John Doe</h3>
+                <button onclick="sendMail('john@example.com', 'John Doe')">Select</button>
+            </div>
+            <div class="card">
+                <img src="assets/designers/designer2.jpg" alt="Designer 2">
+                <h3>Jane Smith</h3>
+                <button onclick="sendMail('jane@example.com', 'Jane Smith')">Select</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    

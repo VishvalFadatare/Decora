@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Theme Category</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background: rgba(222, 197, 132, 0.5);
+        }
+        .container {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: center;
+        }
+        .categories, .variants {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            border: 2px solid #56330a;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            background: white;
+        }
+        .card:hover {
+            background: #f4e4c3;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select a Theme Category</h1>
+        <div class="categories" id="categoryContainer"></div>
+        <div class="variants" id="variantContainer" style="display: none;">
+            <h2>Choose a Variant</h2>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const themeCategories = [
+                { "value": "Classic", "id": "classic", "src": "assets/images/classic.jpg", "label": "Classic Theme" },
+                { "value": "Modern", "id": "modern", "src": "assets/images/modern.jpg", "label": "Modern Theme" },
+                { "value": "Luxury", "id": "luxury", "src": "assets/images/luxury.jpg", "label": "Luxury Theme" }
+            ];
+
+            const variants = {
+                "Classic": [
+                    { "value": "Vintage", "id": "vintage", "src": "assets/images/vintage.jpg", "label": "Vintage Style" },
+                    { "value": "Traditional", "id": "traditional", "src": "assets/images/traditional.jpg", "label": "Traditional Style" }
+                ],
+                "Modern": [
+                    { "value": "Minimalist", "id": "minimalist", "src": "assets/images/minimalist.jpg", "label": "Minimalist Style" },
+                    { "value": "Industrial", "id": "industrial", "src": "assets/images/industrial.jpg", "label": "Industrial Style" }
+                ],
+                "Luxury": [
+                    { "value": "Elegant", "id": "elegant", "src": "assets/images/elegant.jpg", "label": "Elegant Style" },
+                    { "value": "Royal", "id": "royal", "src": "assets/images/royal.jpg", "label": "Royal Style" }
+                ]
+            };
+
+            let categoryContainer = document.getElementById("categoryContainer");
+            let variantContainer = document.getElementById("variantContainer");
+
+            themeCategories.forEach(category => {
+                let card = document.createElement("div");
+                card.classList.add("card");
+                card.innerHTML = `
+                    <img src="${category.src}" alt="${category.label}">
+                    <br><label>${category.label}</label>
+                `;
+                card.onclick = function () {
+                    localStorage.setItem("selectedCategory", category.value);
+                    showVariants(category.value);
+                };
+                categoryContainer.appendChild(card);
+            });
+
+            function showVariants(category) {
+                variantContainer.innerHTML = `<h2>Choose a Variant</h2>`;
+                variants[category].forEach(variant => {
+                    let card = document.createElement("div");
+                    card.classList.add("card");
+                    card.innerHTML = `
+                        <img src="${variant.src}" alt="${variant.label}">
+                        <br><label>${variant.label}</label>
+                    `;
+                    card.onclick = function () {
+                        localStorage.setItem("selectedVariant", variant.value);
+                        window.location.href = "designerSelection.html";
+                    };
+                    variantContainer.appendChild(card);
+                });
+                variantContainer.style.display = "flex";
+            }
+        });
+    </script>
+</body>
+</html>
