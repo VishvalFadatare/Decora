@@ -2,7 +2,7 @@
    require_once('../config.php');
    include_once('customer_class.php');
 
-   if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['page_action'] == 'sign_up') {
+   if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['page_action'] == 'login') {
     cust_login(); }
  ?>  
 
@@ -22,7 +22,7 @@
         <h2>Welcome Back!</h2>
 
        
-        <form method="post" action="dashboard.php">
+        <form method="post" action="">
             <label for="email">E-mail</label>
             <input type="email" id="email" name="email" required>
 

@@ -40,7 +40,7 @@
         </form>
 
         <div class="links">
-            <a href="login.html">Already have an account? <span>Login Here</span></a>
+            <a href="login.php">Already have an account? <span>Login Here</span></a>
         </div>
     </div>
 </body>

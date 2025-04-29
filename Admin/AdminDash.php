@@ -11,7 +11,9 @@
         <header>
             <div class="profile-pic"><img src="Assets/Images/AdminProfile.jpeg" alt=""></div>
             <h1 class="profile-name">Admin Name</h1>
-            <button class="add-designers">Add Designers</button>
+            <!-- <button class="add-designers" >Add Designers</button> -->
+            <button class="add-designers" onclick="window.location.href='add_designer.php'">Add Designers</button>
+
         </header>
 
         <main>

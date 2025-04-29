@@ -14,18 +14,24 @@ function registration()
 function cust_login()
 {
     global $conn;
-    $login=mysqli_query($conn,"SELECT * FROM `tbl_user` WHERE email='".$_REQUEST['email']."' AND password='".md5($_REQUEST['password'])."'");
-    if(mysqli_num_rows($login) > 0)
-    {
-        $login_data=mysqli_fetch_assoc($login);
-        $_SESSION['user_id']=$login_data['id'];
-        $_SESSION['user_name']=$login_data['name'];
-        header("location:../index.php");
+
+    $email = mysqli_real_escape_string($conn, $_REQUEST['email']);
+    $password = md5($_REQUEST['password']);
+
+    $login = mysqli_query($conn, "SELECT * FROM `tbl_user` WHERE email='$email' AND password='$password'");
+
+    if (!$login) {
+        die("Query Error: " . mysqli_error($conn));
     }
-    else
-    {
+
+    if (mysqli_num_rows($login) > 0) {
+        $login_data = mysqli_fetch_assoc($login);
+        $_SESSION['user_id'] = $login_data['id'];
+        $_SESSION['user_name'] = $login_data['name'];
+        header("location:dashboard.php");
+    } else {
         header("location:login.php?msg=2");
-    }   
+    }
 }
 
 function cust_feed()
